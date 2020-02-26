@@ -1,0 +1,231 @@
+
+/*
+Theme Name: writecopy2
+Theme URI: http://jockrock.kuron.jp
+Author: yamasita
+Author URI: http://jockrock.kuron.jp/wp/wp-content/themes/
+Description:
+Version: 1.0
+
+*/
+
+/*--cursor----*/
+.cursor,
+.follower {
+  border-radius: 50%;
+  position: absolute; /*bodyの一番左上になるように配置する*/
+  top: 0;
+  left: 0;
+  cursor: none; /*もともとあるカーソルは見えなくなるようにする*/
+  pointer-events: none;/*他の要素がクリックできなくならないように*/
+}
+
+.cursor {
+  width: 8px;
+  height: 8px;
+  background-color: #000;
+  z-index: 1001; /*どの要素よりも一番上になるようにする*/
+}
+
+.follower {
+  opacity: 0.5;
+  width: 40px;
+  height: 40px;
+  background-color: #fdfe00;
+  z-indes: 1000; /*カーソルの次に上になるようにする*/
+}
+
+
+
+body{
+  cursor: none; /*もともとあるカーソルは見えなくなるようにする*/
+  padding:50px 0;
+  width: 1000px;
+  margin: 0 auto;
+  font-family: Georgia, 游明朝, YuMincho, "Hiragino Mincho ProN", Meiryo, serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+.top-logo a{
+  font-size: 40px;
+  font-family: Georgia;
+  font-weight: bold;
+  line-height: 50px;
+  color: #000000;
+}
+
+.top-logo a:hover{
+  color: #999696;
+}
+
+.top-logo{
+  float: left;
+  margin: 0;
+}
+
+.top-logo p{
+  margin: 0;
+  font-family: 'ＭＳ 明朝', 'MS Mincho',sans-serif;
+}
+
+.nav{
+  margin-right: 150px;
+  float: right;
+  list-style: none;
+  font-family: 'ＭＳ 明朝', 'MS Mincho',sans-serif;
+}
+
+li{
+  float: left;
+  padding: 10px;
+  margin: 10px;
+}
+
+.clear{
+  clear: both;
+}
+
+header .fas{
+  float: right;
+  font-size: 25px;
+  line-height: 86px;
+}
+
+.content1 img{
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.content1{
+  padding: 50px 0;
+}
+
+.content1 h1{
+  font-size: 27px;
+  color: #7c7a7a;
+}
+
+.content2{
+  font-size: 18px;
+  color: #7c7a7a;
+  margin-bottom: 100px;
+}
+
+.content2 .time{
+  margin-left: 50px;
+  float: left;
+}
+
+.content2 .article{
+  float: right;
+  width: 650px;
+}
+
+.content3{
+  text-align: center;
+}
+
+.article .title{
+  font-size: 23px;
+  color: #000;
+  margin: 10px 0;
+  display: inline-block;
+}
+
+.footerTop{
+  margin-top: 50px;
+  padding: 30px 0;
+  border-top: 1px solid #d6d2d2;
+  border-bottom: 1px solid #d6d2d2;
+}
+
+.footerTop .foot{
+  width: 24%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.profile img,h2{
+  width: 50%;
+  float: left;
+  display: inline-block;
+}
+
+.profile img{
+  border-radius: 50%;
+}
+
+.profile p{
+  clear: both;
+}
+
+.category a{
+  display: block;
+}
+
+.footerBottom{
+  margin: 30px 0;
+  color: #7c7a7a;
+}
+
+.footerBottom i{
+  font-size: 25px;
+  margin: 0 10px;
+}
+
+.footerBottom p{
+  display: inline-block;
+  margin-left: 200px;
+}
+
+/*  ページネーション
+-------------------------*/
+.pagination {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.pagination ul {
+  font-size: 0;
+  text-align: center;
+}
+
+.pagination ul li {
+  font-size: 1rem;
+  display: inline-block;
+  margin-right: .5rem;
+}
+
+.pagination ul li:last-child {
+  border: 0;
+}
+
+.pagination ul li a,
+.pagination .current {
+  display: block;
+  padding: .5rem .8rem;
+  border: 1px solid #ccc;
+}
+
+.pagination ul li .prev,
+.pagination ul li .next {
+  border: 0;
+}
+
+.pagination ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.pagination ul li a:hover {
+  opacity: .6;
+}
+
+.pagination .current {
+  color: #fff;
+  background-color: #03162f;
+}
