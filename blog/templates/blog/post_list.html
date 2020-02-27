@@ -1,121 +1,14 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <title>writecopy</title>
-  </head>
 
-  <body>
-    <header>
-      <div class="top-logo">
-        <a href="">Write</a>
-        <p>書くためのテーマ</p>
-      </div>
-      <i class="fas fa-search"></i>
+{% extends 'blog/base.html' %}
 
-      <ul>
-        <li>ホーム</li>
-        <li>ページ</li>
-        <li>タイポグラフィー</li>
-        <li>お問い合わせ</li>
-      </ul>
-      <div class="clear">
-
-      </div>
-    </header>
-
-    {{posts}}
-
+{% block content %}
     {% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
     {% endfor %}
-
-    <div class="content1">
-      <img src="images/cropped-nicole-honeywill-730102-unsplash.jpg" alt="topPhoto">
-      <h1>Writeは文章を書く人のためのミニマルなWordPressテーマです。装飾を極限まで省いたデザインは、あなたの文章を主役にします。</h1>
-    </div>
-
-    <div class="content2">
-      <div class="time">
-        2018年9月1日
-      </div>
-      <div class="article">
-        <div class="title">
-          書くためのテーマ
-        </div>
-        <div class="content">
-          Writeは文章を書く人のためのミニマルなWordPressテーマです。装飾を極限まで省いたデザインは、あなたの文章を主役にします。
-        </div>
-      </div>
-      <div class="clear">
-
-      </div>
-    </div>
-
-    <div class="pageNavi">
-      <div class="number">
-        1
-      </div>
-      <a class="number" href="#">2</a>
-      <a class="number" href="#">3</a>
-      <a class="nextPage" href="#">next</a>
-    </div>
-
-    <footer>
-      <div class="footerTop">
-        <div class="profile foot">
-          <img src="images/samune.png" alt="サムネ">
-          <h2 class="name">竹下 大地</h2>
-          <p>自分のプロフィールを書くとこ</p>
-        </div>
-        <div class="footerRight foot">
-          <p class="subtitle">
-            右フッター
-          </p>
-          <a class="content">
-            って何？
-          </a>
-        </div>
-        <div class="recentArticle foot">
-          <p   class="subtitle">
-            最近の投稿
-          </p>
-          <a class="content">
-            何もないよ
-          </a>
-        </div>
-        <div class="category foot">
-          <p class="subtitle">
-            カテゴリー
-          </p>
-          <div class="content">
-            <a href="" class="">
-              カテゴリー別に
-            </a>
-            <a href="" class="">
-              分けることもできる
-            </a>
-          </div>
-        </div>
-        <div class="clear">
-
-        </div>
-      </div>
-      <div class="footerBottom">
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-instagram"></i>
-        <p>Powered by WordPress | Theme: Write by Themegraphy</p>
-      </div>
-    </footer>
-  </body>
-</html>
+{% endblock %}
