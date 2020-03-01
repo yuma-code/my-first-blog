@@ -1,0 +1,22 @@
+<!DOCTYPE thml>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>test</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'css/test.css' %}">
+
+</head>
+
+<body>
+
+  <div class="start-con">
+    <h1>遊びたいタイトルを選択してください.</h1>
+    <a class="koya" href="{% url 'post_new' %}">こーや</a>
+    <a class="ape" href="{% url 'post_new' %}">あぺｘ</a>
+  </div>
+
+</body>
