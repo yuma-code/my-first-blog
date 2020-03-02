@@ -61,7 +61,7 @@ def post_publish(request, pk):
 def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
-    return redirect('post_list')
+    return redirect('comeon')
 
 def add_comment_to_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
