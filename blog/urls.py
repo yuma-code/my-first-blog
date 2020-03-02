@@ -18,7 +18,8 @@ from . import views
 
 urlpatterns = [
     path('', views.start, name='start'),
-    path('comeon', views.post_list, name='comeon'),
+    path('fortnight', views.post_list_fortnight, name='fortnight'),
+    path('apex', views.post_list_apex, name='apex'),
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
     path('post/new/', views.post_new, name='post_new'),
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
