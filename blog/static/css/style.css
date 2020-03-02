@@ -1,5 +1,7 @@
+
+
 .page-header {
-  background-color: #C25100;
+  background-color: rgb(10, 11, 13);
   margin-top: 0;
   padding: 20px 20px 20px 40px;
 }
@@ -47,4 +49,9 @@ h1, h2, h3, h4 {
 
 .comment {
     margin: 20px 0px 20px 20px;
+}
+
+.header-logo{
+  color: rgb(237, 240, 239);
+  font-family:'Impact';
 }

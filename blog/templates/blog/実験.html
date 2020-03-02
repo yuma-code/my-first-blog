@@ -1,5 +1,5 @@
 {% load static %}
-<!DOCTYPE thml>
+<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -16,8 +16,10 @@
 
   <div class="start-con">
     <h1>遊びたいタイトルを選択してください.</h1>
-    <a class="koya" href="{% url 'comeon' %}">こーや</a>
-    <a class="ape" href="{% url 'comeon' %}">あぺｘ</a>
+    <a  href="{% url 'comeon' %}"><img class="fortnite-logo" src="{% static "img/fortnite-logo.jpg"%}"></a>
+    <a href="{% url 'comeon' %}"><img class="apex-logo"  src="{% static "img/apex-logo.jpg"%}"></a>
   </div>
 
 </body>
+
+<img src="" alt="">
