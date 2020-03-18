@@ -1,11 +1,81 @@
+
+
 @charset "utf-8";
 
 body{
-  background-color: rgb(65, 61, 66);
+  background-image: url("/static/img/match-back.png");
   width: 100%;
   height: 100%;
   margin: 0;
   text-align: center;
+}
+
+header{
+  height: 80px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: double white;
+}
+
+header .logo{
+  margin-left: 40px;
+  height: 80px;
+
+}
+
+.logo h1{
+  font-family: 'Impact';
+  letter-spacing: 2px;
+  height: 80px;
+  font-size: 50px;
+  color: white;
+}
+
+.header-list{
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.header-list li{
+  font-size: 20px;
+  margin-right: 40px;
+  color: rgb(227, 222, 218);
+}
+
+.main{
+  display: flex;
+}
+
+.main-message{
+  flex-basis: 40%;
+}
+
+.main-message h1{
+  color: white;
+  font-size: 30px;
+  margin-top: 150px;
+  font-family: "Impact";
+}
+
+.selectform{
+  flex-basis: 60%;
+}
+
+.select{
+  display: flex;
+}
+
+.selectitem{
+  width: 150px;
+}
+
+.selectitem a img{
+  width: 150px;
+  height: 120px;
+
 }
 
 .start-con{
@@ -13,7 +83,7 @@ body{
   display:inline-block;
   width: 900px;
   height: 400px;
-  margin-top: 100px;
+
 }
 
 

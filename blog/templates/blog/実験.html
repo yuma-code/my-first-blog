@@ -13,14 +13,55 @@
 </head>
 
 <body>
+  <header>
+    <div class="logo">
+      <h1>MATCH</h1>
+    </div>
+    <ul class="header-list">
+      <li>language</li>
+      <li>お問い合わせ</li>
+    </ul>
+  </header>
 
-  <div class="start-con">
+  <section class="main">
+    <div class="main-message">
+      <h1>ゲームマッチングサービス MATCH<br>
+      一緒にゲームを楽しむフレンド探し<br>
+      切磋琢磨できるライバル<br>
+      ゲームを通しての仲間作りを<br>お手伝いします.</h1>
+    </div>
+    <div class="selectform">
+      <h1>利用するゲームのタイトルを選択してください.</h1>
+      <div class="select">
+        <div class="apex-ledgends, selectitem">
+          <a href="{% url 'apex' %}">
+            <h2>APEX LEDGENDS</h2>
+            <img class="apex-logo"  src="{% static "img/reis.png"%}">
+          </a>
+        </div>
+        <div class="fortnight, selectitem">
+          <a href="{% url 'apex' %}">
+            <h2>FORTNIGHT</h2>
+            <img class="fortnight-logo"  src="{% static "img/lama.png"%}">
+          </a>
+        </div>
+        <div class="hunter, selectitem">
+          <a href="{% url 'apex' %}">
+            <h2>MONSTER HUNTER WORLD</h2>
+            <img class="mhw-logo"  src="{% static "img/mhw-logo.jpg"%}">
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- <div class="start-con">
     <h1>遊びたいタイトルを選択してください.</h1>
-    <h2>うんちんちん</h2>
+
     <a  href="{% url 'fortnight' %}"><img class="fortnite-logo" src="{% static "img/fortnite-logo.jpg"%}"></a>
     <a href="{% url 'apex' %}"><img class="apex-logo"  src="{% static "img/apex-logo.jpg"%}"></a>
-  </div>
+  </div> -->
 
 </body>
-
-<img src="" alt="">
