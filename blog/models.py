@@ -3,15 +3,22 @@ from django.db import models
 from django.utils import timezone
 
 DEVICE_CHOICES=(
-    ('ps4','PS4'),
-    ('pc','PC')
+    ('PS4','PS4'),
+    ('PC','PC')
+)
+
+PURPOSE_CHOICES=(
+    ('カジュアル','カジュアル'),
+    ('ランクマッチ','ランクマッチ'),
+    ('イベント','イベント'),
 )
 
 class Post(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    text = models.TextField()
-    device = models.CharField(max_length=200, choices=DEVICE_CHOICES,default='ps4')
+    # author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    psid= models.CharField(max_length=200)
+    comment = models.TextField()
+    device = models.CharField(max_length=20, choices=DEVICE_CHOICES,default='PS4')
+    purpose = models.CharField(max_length=20, choices=PURPOSE_CHOICES,default='カジュアル')
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
