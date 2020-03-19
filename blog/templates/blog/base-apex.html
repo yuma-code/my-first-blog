@@ -7,8 +7,14 @@
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src='{% static 'js/post-btn.js' %}'></script>
+
     </head>
     <body>
+      <div id="post-btn">
+        <a href="{% url 'post_new' %}"><h2 class="plus">+</h2></a>
+      </div>
       <div class="page-header">
         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
@@ -18,15 +24,25 @@
           {% else %}
             <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
           {% endif %}
-          <h1 class="header-logo"><a href="/">MATCH<small>~FORTNIGHT~</small></a></h1>
+          <h1 class="header-logo"><a href="/">MATCH<small>~APEX LEDGEND~</small></a></h1>
       </div>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
-            {% block content %}
-            {% endblock %}
-            </div>
+      <!-- <div class="postorview">
+        <div class="disp-board">
+          <h2>募集を見る</h2>
         </div>
-    </div>
+        <div class="do-post">
+          <h2>募集をする</h2>
+        </div>
+      </div> -->
+      <div class="content container">
+          <div class="row">
+              <div class="col-md-8">
+              {% block content %}
+              {% endblock %}
+              </div>
+          </div>
+      </div>
+    
+
 </body>
 </html>

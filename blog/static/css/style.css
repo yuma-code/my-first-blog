@@ -7,9 +7,10 @@ body{
 }
 
 .page-header {
+  height: 80px;
   background-color: rgb(10, 11, 13);
   margin-top: 0;
-  padding: 20px 20px 20px 40px;
+  /* padding: 20px 20px 20px 40px; */
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -17,13 +18,59 @@ body{
   font-size: 36pt;
   text-decoration: none;
 }
+.header-logo{
+  color: rgb(237, 240, 239);
+  font-family:'Impact';
+  margin: 0;
+  padding: 0;
+}
 
 .content {
   margin-left: 40px;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Lobster', cursive;
+  font-family: 'Impact', cursive;
+}
+
+#post-btn{
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 60px;
+  background-color: rgb(12, 196, 69);
+  opacity: 0.5;
+}
+
+#post-btn a{
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+.plus{
+  line-height: 120px;
+  margin: 0;
+  padding: 0;
+  font-size: 50px;
+}
+
+.postorview{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 400px;
+  height: 100px;
+}
+
+.postorview h2{
+  font-size: 30px;
+  border-radius: 10px;
+  border: 1px solid rgb(126, 135, 126);
 }
 
 .date {
@@ -55,9 +102,4 @@ h1, h2, h3, h4 {
 
 .comment {
     margin: 20px 0px 20px 20px;
-}
-
-.header-logo{
-  color: rgb(237, 240, 239);
-  font-family:'Impact';
 }

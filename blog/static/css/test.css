@@ -62,10 +62,17 @@ header .logo{
 
 .selectform{
   flex-basis: 60%;
+  padding-right: 20px;
+  margin-top: 80px;
+}
+
+.selectform h1{
+  color: white;
 }
 
 .select{
   display: flex;
+  justify-content: space-around;
 }
 
 .selectitem{

@@ -1,0 +1,11 @@
+$(function(){
+  //hoverイベント
+  $('#post-btn').hover(function(){
+    $(this).css('color','white');
+    $(this).css('opacity','1');
+    },
+    function(){
+    $(this).css('color','black');
+    $(this).css('opacity','0.5');
+    });
+  });
