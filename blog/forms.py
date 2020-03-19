@@ -8,13 +8,14 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('title', 'text', 'device')
-    # device = forms.ChoiceField(
-    #     label='Device',
-    #     widget=forms.Select,
-    #     choices=DEVICE_CHOICES,
-    #     required=True,
-    # )
+        fields = ('psid', 'comment', 'device', 'purpose')
+        labels = {
+            'psid' : 'ID',
+            'comment' : 'コメント',
+            'device' : '機種',
+            'purpose' : '目的',
+        }
+
 
 class CommentForm(forms.ModelForm):
 
