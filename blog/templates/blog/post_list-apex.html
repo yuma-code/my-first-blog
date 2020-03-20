@@ -5,10 +5,16 @@
 
 
 {% block content %}
-    {% for post in posts %}
+  <form action="" method="GET">
+        {{ form.as_p }}<br>
+    {% csrf_token %}
+    <button type="submit">検索</button>
+  </form>
+    <hr>
+      {% for post in posts %}
         <div class="post">
             <div class=post-left>
-              
+
                 <p class="datep">{{ post.published_date }}</p>
                 <p class="psidp"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.psid }}</a></p>
                 <!-- <p>{{ post.comment|linebreaksbr }}</p> -->

@@ -1,10 +1,11 @@
 from django.shortcuts import redirect
+from django.db.models import Q
 from django.shortcuts import render
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Post,Comment
-from .forms import PostForm,CommentForm
+from .forms import PostForm,CommentForm, SearchForm
 
 def start(request):
     return render(request, 'blog/home.html')
@@ -66,6 +67,51 @@ def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
     return redirect('comeon')
+
+# 絞り込み検索
+def index(request):
+    # post_list = Profile.objects.all()
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    form = SearchForm(request.GET or None)
+    if request.method == 'GET':
+        # 全ての入力欄はrequired=Falseなので、必ずTrueになる。
+        if form.is_valid():
+
+            # Qオブジェクトを格納するリスト
+            queries = []
+
+            # 各フォームの入力をもとに、Qオブジェクトとして検索条件を作っていく
+            # for form in forms:
+            # Qオブジェクトの引数になる。
+            # {gender: 1, height__gte: 170} → Q(gender=1, height__gte=170)
+            q_kwargs = {}
+            device = form.cleaned_data['device']
+            print(form.cleaned_data['device'])
+            if device:
+                q_kwargs['device'] = device
+
+            purpose = form.cleaned_data['purpose']
+            if purpose:
+                q_kwargs['purpose'] = purpose
+
+            # ここは、そのフォームに入力があった場合にのみ入る。
+            # フォームが空なら、q_kwargsは空のままです。
+            if q_kwargs:
+                q = Q(**q_kwargs)
+                queries.append(q)
+
+            if queries:
+                # filter(Q(...) & Q(...) & Q(...))を動的に行っている。
+                base_query = queries.pop()
+                for query in queries:
+                    base_query &= query
+                posts = posts.filter(base_query)
+
+    context = {
+        'posts': posts,
+        'form': form,
+    }
+    return render(request, 'blog/post_list-apex.html', context)
 
 def add_comment_to_post(request, pk):
     post = get_object_or_404(Post, pk=pk)

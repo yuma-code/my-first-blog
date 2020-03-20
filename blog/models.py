@@ -2,16 +2,16 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
-DEVICE_CHOICES=(
+DEVICE_CHOICES=[
     ('PS4','PS4'),
     ('PC','PC')
-)
+]
 
-PURPOSE_CHOICES=(
+PURPOSE_CHOICES=[
     ('カジュアル','カジュアル'),
     ('ランクマッチ','ランクマッチ'),
     ('イベント','イベント'),
-)
+]
 
 class Post(models.Model):
     # author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
