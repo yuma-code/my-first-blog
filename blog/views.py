@@ -94,6 +94,14 @@ def index(request):
             if purpose:
                 q_kwargs['purpose'] = purpose
 
+            rank = form.cleaned_data['rank']
+            if rank:
+                q_kwargs['rank'] = rank
+
+            num = form.cleaned_data['num']
+            if num:
+                q_kwargs['num'] = num
+
             # ここは、そのフォームに入力があった場合にのみ入る。
             # フォームが空なら、q_kwargsは空のままです。
             if q_kwargs:

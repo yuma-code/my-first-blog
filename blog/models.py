@@ -13,12 +13,33 @@ PURPOSE_CHOICES=[
     ('イベント','イベント'),
 ]
 
+RANK_CHOICES=[
+    ('','指定なし'),
+    ('bronz','ブロンズ'),
+    ('silver','シルバー'),
+    ('gold','ゴールド'),
+    ('platinum','プラチナ'),
+    ('diamond','ダイヤ'),
+    ('master','マスター'),
+    ('predator','プレデター')
+]
+
+NUM_CHOISES=[
+    ('','指定なし'),
+    ('1',1),
+    ('2',2),
+    ('3',3),
+    ('4',4)
+]
+
 class Post(models.Model):
     # author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     psid= models.CharField(max_length=200)
     comment = models.TextField()
     device = models.CharField(max_length=20, choices=DEVICE_CHOICES,default='PS4')
     purpose = models.CharField(max_length=20, choices=PURPOSE_CHOICES,default='カジュアル')
+    rank = models.CharField(max_length=20, choices=RANK_CHOICES,default='指定なし')
+    num = models.CharField(max_length=20, choices=NUM_CHOISES,default='指定なし')
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
