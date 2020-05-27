@@ -38,8 +38,8 @@ class Post(models.Model):
     comment = models.TextField()
     device = models.CharField(max_length=20, choices=DEVICE_CHOICES,default='PS4')
     purpose = models.CharField(max_length=20, choices=PURPOSE_CHOICES,default='カジュアル')
-    rank = models.CharField(max_length=20, choices=RANK_CHOICES,default='指定なし')
-    num = models.CharField(max_length=20, choices=NUM_CHOISES,default='指定なし')
+    rank = models.CharField(max_length=20, choices=RANK_CHOICES,default='指定なし',blank=True)
+    num = models.CharField(max_length=20, choices=NUM_CHOISES,default='指定なし',blank=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
